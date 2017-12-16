@@ -1,4 +1,4 @@
-package no.bjonnhy.gameBoardBase.logic;
+package no.bjonnhy.gameBoardBase.event;
 
 import java.util.EventObject;
 
@@ -26,11 +26,6 @@ public class PlayerEvent extends EventObject{
 	private int player;
 	/** The state of the active player */
 	private int state;
-	/** The tile the player moves from */
-	private int from;
-	/** The tile the player moves to */
-	private int to;
-	
 	
 	/** Default constructor */
 	public PlayerEvent(Object source) {
@@ -46,22 +41,5 @@ public class PlayerEvent extends EventObject{
 		super(source);
 		this.player = player;
 		this.state = state;
-		this.from = 0;
-		this.to = 0;
-	}
-	
-	/**
-	 * Constructs a PlayerEvent with the given parameters
-	 * @param player - Player index
-	 * @param state - The state
-	 * @param from - The tile a player moves from
-	 * @param to - The tile a player moves to
-	 */
-	public PlayerEvent(Object source, int player, int state, int from, int to) {
-		super(source);
-		this.player = player;
-		this.state = state;
-		this.from = from;
-		this.to = to;
 	}
 }

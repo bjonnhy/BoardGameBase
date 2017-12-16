@@ -1,4 +1,4 @@
-package GameBoardBase;
+package no.bjonnhy.gameBoardBase;
 
 /**
  * Hello world!

@@ -1,4 +1,4 @@
-package no.bjonnhy.gameBoardBase.logic;
+package no.bjonnhy.gameBoardBase.event;
 
 import java.util.EventObject;
 

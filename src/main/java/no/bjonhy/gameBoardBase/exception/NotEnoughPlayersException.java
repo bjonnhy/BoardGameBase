@@ -1,4 +1,4 @@
-package no.bjonnhy.gameBoardBase.logic;
+package no.bjonhy.gameBoardBase.exception;
 
 /**
  * Exception for not enough players in a game
