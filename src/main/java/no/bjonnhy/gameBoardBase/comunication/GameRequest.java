@@ -26,9 +26,9 @@ public class GameRequest extends Message {
 	private PieceEvent pieceEvent;
 	
 	/**
-	 * Constructs a GameRequest with the given parameters
-	 * This is for all {@linkplain RequestType}s, except {@linkplain RequestType#MOVE MOVE}
-	 * see the other constructor
+	 * Constructs a GameRequest with the given parameters. <br>
+	 * This is for all {@linkplain RequestType}s, except {@linkplain RequestType#MOVE MOVE}.
+	 * See the other constructor
 	 * 
 	 * @param clientID - The ID of the client that caused the event
 	 * @param gameID - The ID of the game that caused the event
@@ -47,7 +47,7 @@ public class GameRequest extends Message {
 	/**
 	 * ONLY used when a player wants to move a piece,
 	 * and therefore the {@linkplain RequestType} is locked
-	 * as {@linkplain RequestType#MOVE MOVE}
+	 * as {@linkplain RequestType#MOVE MOVE}. <br>
 	 * Constructs a GameRequest with the given parameters 
 	 * 
 	 * @param clientID - The ID of the client that asks
@@ -144,11 +144,49 @@ public class GameRequest extends Message {
 	/**
 	 * Sets the {@linkplain PieceEvent} associated with
 	 * this request. Should not be used expect when
-	 * {@linkplain RequestType} is {@linkplain RequestType#MOVE MOVE}
+	 * {@linkplain RequestType} is {@linkplain RequestType#MOVE MOVE}.
 	 * 
 	 * @param pieceEvent - The new {@linkplain PieceEvent}
 	 */
 	public void setPieceEvent(PieceEvent pieceEvent) {
 		this.pieceEvent = pieceEvent;
+	}
+	
+	@Override
+	public String toString() {
+		String ret = "CID: " + this.clientID
+					+ ", GID: " + this.gameID
+					+ " - " + this.gameType
+					+ ", Request: " + this.requestType;
+		
+		if(this.requestType.equals(RequestType.MOVE)) {
+			ret	+= " -> " + this.pieceEvent.toString();
+		}
+		
+		return ret;
+	}
+	
+	@Override
+	public boolean equals(Object object) {
+		boolean ret = false;
+		
+		if(object instanceof GameRequest) {
+			GameRequest gr = (GameRequest) object;
+			
+			if(this.clientID == gr.getClientID()
+				&& this.gameID == gr.gameID
+				&& this.gameType.equals(gr.getGameType())
+				&& this.requestType.equals(gr.getRequestType())) {
+				
+				if(gr.requestType.equals(RequestType.MOVE)) {
+					ret = this.pieceEvent.equals(gr.getPieceEvent());
+				} else {
+					ret = true;
+				}
+			}
+		}
+		
+		
+		return ret;
 	}
 }

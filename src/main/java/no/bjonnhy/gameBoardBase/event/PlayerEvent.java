@@ -67,4 +67,26 @@ public class PlayerEvent extends EventObject{
 	public void setState(PlayerState state) {
 		this.state = state;
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + " / " + this.player + " -> " + this.state.toString();
+	}
+	
+	@Override
+	public boolean equals(Object object) {
+		if(object instanceof PlayerEvent) {
+			PlayerEvent pe = (PlayerEvent) object;
+			if(this.source.equals(pe.getSource())
+				&& this.player == pe.getPlayer()
+				&& this.state.equals(pe.getState()))
+			{
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
 }

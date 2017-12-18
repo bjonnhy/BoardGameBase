@@ -1,4 +1,4 @@
-package no.bjonhy.gameBoardBase.exception;
+package no.bjonnhy.gameBoardBase.exception;
 
 /**
  * Exception that marks that a game is full

@@ -37,5 +37,56 @@ public class Message implements Serializable {
 		this.messageType = messageType;
 		this.message = message;
 	}
+	
+	/**
+	 * Gets the type of message this is
+	 * @return A {@linkplain MessageType}
+	 */
+	public MessageType getMessageType() {
+		return this.messageType;
+	}
 
+	/**
+	 * Sets the {@linkplain MessageType} of this message.
+	 * @param messageType - A {@linkplain MessageType}
+	 */
+	public void setMessageType(MessageType messageType) {
+		this.messageType = messageType;
+	}
+	
+	/**
+	 * Gets the message in this Message
+	 * @return The message
+	 */
+	public String getMessage() {
+		return this.message;
+	}
+	
+	/**
+	 * Sets the message in this Message
+	 * @param message - The message to send
+	 */
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
+	@Override
+	public String toString() {
+		return messageType.toString() + ": " + message;
+	}
+	
+	@Override
+	public boolean equals(Object object) {
+		if(object instanceof Message) {
+			Message msg = (Message) object;
+			if(msg.getMessageType().equals(this.messageType)
+					&& msg.getMessage().equals(this.message)) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
 }

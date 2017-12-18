@@ -101,4 +101,31 @@ public class GameEvent extends Message {
 	public void setEvent(EventObject event) {
 		this.event = event;
 	}
+	
+	@Override
+	public String toString() {
+		return gameType.toString()
+				+ " - CID: " + this.clientID
+				+ ", GID: "  + this.gameID
+				+ " -> "     + this.event.toString();
+	}
+	
+	@Override
+	public boolean equals(Object object) {
+		if(object instanceof GameEvent) {
+			GameEvent ge = (GameEvent) object;
+			
+			if(this.gameType.equals(ge.getGameType())
+				&& this.clientID == ge.getClientID()
+				&& this.gameID == ge.getGameID()
+				&& this.event.equals(ge.getEvent()))
+			{
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
 }
