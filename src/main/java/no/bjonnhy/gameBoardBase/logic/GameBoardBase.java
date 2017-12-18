@@ -3,7 +3,7 @@ package no.bjonnhy.gameBoardBase.logic;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import no.bjonnhy.gameBoardBase.event.DiceListner;
+import no.bjonnhy.gameBoardBase.event.DiceListener;
 import no.bjonnhy.gameBoardBase.event.PieceListener;
 import no.bjonnhy.gameBoardBase.event.PlayerListener;
 
@@ -25,7 +25,7 @@ public class GameBoardBase {
 	/** Holds all the {@linkplain PieceListener}s for this game */
 	private static ArrayList<PieceListener> pieceListeners;
 	/** Holds all the {@linkplain DiceListener}s for this game */
-	private static ArrayList<DiceListner> diceListners;
+	private static ArrayList<DiceListener> diceListners;
 	
 	
 	
