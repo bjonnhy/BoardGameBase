@@ -1,4 +1,4 @@
-package no.bjonnhy.gameBoardBase;
+package no.bjonnhy.gameBoardBase.enums;
 
 /**
  * Enum for the players in a game

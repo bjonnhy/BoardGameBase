@@ -1,4 +1,4 @@
-package no.bjonnhy.gameBoardBase;
+package no.bjonnhy.gameBoardBase.enums;
 
 /**
  * Provides enums for the different chess pieces

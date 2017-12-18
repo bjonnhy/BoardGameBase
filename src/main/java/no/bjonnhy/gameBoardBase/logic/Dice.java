@@ -1,4 +1,4 @@
-package no.bjonnhy.gameBoardBase;
+package no.bjonnhy.gameBoardBase.logic;
 
 import java.security.SecureRandom;
 

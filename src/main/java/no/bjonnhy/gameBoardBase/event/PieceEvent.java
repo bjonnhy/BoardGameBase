@@ -6,8 +6,10 @@ import java.util.EventObject;
  * Contains information about a PieceEvent
  * @author bjonnhy
  */
-@SuppressWarnings("serial")
 public class PieceEvent extends EventObject {
+	
+	/** Needs this so we can send this object through socket */
+	private static final long serialVersionUID = 1L;
 	/** The index of the player that moved his piece */
 	private int player;
 	/** The index of the piece that moved */

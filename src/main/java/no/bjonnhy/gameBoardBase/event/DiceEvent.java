@@ -8,6 +8,8 @@ import java.util.EventObject;
  */
 public class DiceEvent extends EventObject {
 	
+	/** Needs this so we can send this object through socket */
+	private static final long serialVersionUID = 1L;
 	/** The index of the player that threw */
 	private int player;
 	/** The value of the thrown dice */
