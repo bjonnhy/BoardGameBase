@@ -35,15 +35,19 @@ public class GameBoardBase {
 	
 	/**
 	 * Constructs a game where people can join
-	 * later by {@linkplain}
-	 * @param gameType
+	 * after the game is created (new random games)
+	 * @param gameType - the type of game to be played. Can be any
+	 *                 of the {@linkplain GameType} types.
 	 */
 	public GameBoardBase(GameType gameType) {
 		
 	}
 	
 	/**
-	 * Tries to construct a game with the given players
+	 * Tries to construct a game with the given players<br>
+	 * Could be used when someone is challenging a friend, or
+	 * similar
+	 *
 	 * @param gameType - The type of game
 	 * @param players - A list of participating players
 	 * @throws NotEnoughPlayersException if there are less players
@@ -82,7 +86,9 @@ public class GameBoardBase {
 		int s = players.size();
 		
 		// TODO insert max value for the GameType
-		if(s <= 1 && s >= 4) {
+		// FIXME revisit logic
+		// if we have more space on the game
+		if(s <= 4) {
 			players.add(s + 1);
 			playerMap.put(s + 1, player);
 			return true;
@@ -109,7 +115,7 @@ public class GameBoardBase {
 		}
 		
 		for(int i : players) {
-			if(player == playerMap.get(i)) {
+			if(player.equals(playerMap.get(i))) {
 				throw new IllegalPlayerNameException();
 			}
 		}
