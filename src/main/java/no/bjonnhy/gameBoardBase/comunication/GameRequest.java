@@ -180,8 +180,6 @@ public class GameRequest extends Message {
 				
 				if(gr.requestType.equals(RequestType.MOVE)) {
 					ret = this.pieceEvent.equals(gr.getPieceEvent());
-				} else {
-					ret = true;
 				}
 			}
 		}
