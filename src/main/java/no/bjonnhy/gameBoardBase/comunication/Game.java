@@ -1,4 +1,4 @@
-package no.bjonnhy.gameBoardBase.client;
+package no.bjonnhy.gameBoardBase.comunication;
 
 import no.bjonnhy.gameBoardBase.enums.GameType;
 

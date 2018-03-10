@@ -12,5 +12,7 @@ public enum RequestType {
 	JOIN_GAME,
 	LEAVE_GAME,
 	JOIN_CHAT,
-	LEAVE_CHAT;
+	LEAVE_CHAT,
+	LOGIN,
+	REGISTRATION;
 }

@@ -2,9 +2,12 @@ package no.bjonnhy.gameBoardBase.client;
 
 import java.util.ArrayList;
 
+import no.bjonnhy.gameBoardBase.comunication.Game;
+
 /**
  * This class acts like the base for all gameclients that builds
  * on this package
+ * @author bjonnhy
  */
 public class BaseClient {
     private int clientID;
@@ -29,7 +32,7 @@ public class BaseClient {
      */
     public void addGame(Game game){
         if(this.games == null){
-            this.games = new ArrayList<>();
+            this.games = new ArrayList<Game>();
         }
 
         this.games.add(game);

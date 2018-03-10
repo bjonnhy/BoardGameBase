@@ -2,7 +2,7 @@ package GameBoardBase;
 
 import junit.framework.TestCase;
 import no.bjonnhy.gameBoardBase.client.BaseClient;
-import no.bjonnhy.gameBoardBase.client.Game;
+import no.bjonnhy.gameBoardBase.comunication.Game;
 import no.bjonnhy.gameBoardBase.enums.GameType;
 
 /**
